@@ -3,29 +3,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        yellow_light: '#F1E9C9',
-        yellow: '#DBAC2C',
-        yellow_dark: '#C47F17',
+        blue: '#3294F8',
 
-        purple_light: '#EBE5F9',
-        purple: '#8047F8',
-        purple_dark: '#4B2995',
-
-        base_title: '#272221',
-        base_subtitle: '#403937',
-        base_text: '#574F4D',
-        base_label: '#8D8686',
-        base_hover: '#D7D5D5',
-        base_button: '#E6E5E5',
-        base_input: '#EDEDED',
-        base_card: '#F3F2F2',
-
-        background: '#FAFAFA',
-        white: '#FFFFFF',
+        base_title: '#E7EDF4',
+        base_subtitle: '#C4D4E3',
+        base_text: '#AFC2D4',
+        base_span: '#7B96B2',
+        base_label: '#3A536B',
+        base_border: '#1C2F41',
+        base_post: '#112131',
+        base_profile: '#0B1B2B',
+        base_background: ' #071422',
+        base_input: '#040F1A',
       },
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
-        serif: ['"Baloo 2"', 'cursive'],
+        sans: ['Nunito', 'sans-serif'],
+      },
+
+      maxWidth: {
+        maxWidthProject: '864px',
       },
     },
   },

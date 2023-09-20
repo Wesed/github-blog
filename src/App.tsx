@@ -1,7 +1,8 @@
 import './globals.css'
+import { Home } from './pages/Home'
 
 function App() {
-  return <div className="">aa</div>
+  return <Home />
 }
 
 export default App

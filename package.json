@@ -1,5 +1,5 @@
 {
-  "name": "coffee-delivery",
+  "name": "github-blog",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.1",
-    "phosphor-react": "^1.4.1",
+    "lucide-react": "^0.279.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.46.1",
