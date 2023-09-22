@@ -21,7 +21,7 @@ module.exports = {
       },
 
       maxWidth: {
-        maxWidthProject: '864px',
+        maxWidthProject: '1000px',
       },
     },
   },

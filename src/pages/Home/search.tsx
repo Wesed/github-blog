@@ -1,9 +1,14 @@
+import { useContext } from 'react'
+import { GithubContext } from '../../contexts/githubontext'
+
 export function Search() {
+  const { githubIssuesData } = useContext(GithubContext)
+  const totalPosts = githubIssuesData.length
   return (
     <div className="mx-auto mt-20 flex flex-col gap-3">
       <div className="flex justify-between">
         <h2 className="text-lg text-base_subtitle">Publicações</h2>
-        <span className="text-sm text-base_span">6 publicações</span>
+        <span className="text-sm text-base_span">{totalPosts} publicações</span>
       </div>
       <input
         type="text"
