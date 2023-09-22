@@ -22,9 +22,10 @@ export function PostCard({ title, date, description }: PostCardProps) {
           {title}
         </h1>
       </div>
-      <p className="description mt-5 overflow-y-hidden text-base_text">
+
+      <div className="description mt-5 overflow-y-hidden text-base_text">
         <ReactMarkdown>{description}</ReactMarkdown>
-      </p>
+      </div>
     </div>
   )
 }

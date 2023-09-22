@@ -27,6 +27,7 @@ interface GithubContext {
   githubData: GithubDataProps
   githubURL: string
   githubIssuesData: GithubIssuesDataProps[]
+  fetchGithubIssues: (query?: string) => void
 }
 export const GithubContext = createContext({} as GithubContext)
 
@@ -64,8 +65,14 @@ export function GithubContextProvider({
   }, [])
 
   // retorna as issues
-  const getGithubIssues = useCallback(async () => {
-    const repoParams = 'repo:Wesed/github-blog'
+  const fetchGithubIssues = useCallback(async (query?: string) => {
+    let repoParams
+    if (query) {
+      repoParams = `${query} repo:Wesed/github-blog`
+    } else {
+      repoParams = 'repo:Wesed/github-blog'
+    }
+
     const response = await api.get('/issues', {
       params: {
         q: repoParams,
@@ -82,28 +89,31 @@ export function GithubContextProvider({
   }, [])
 
   // pesquisar entre as issues
-  const getGithubIssues = useCallback(
-    async (query: string) => {
-      const repoParams = `${query}%20repo:${githubData.login}/github-blog`
-      console.log(repoParams)
-      const response = await api.get('/issues', {
-        params: {
-          q: repoParams,
-        },
-      })
+  // const fetchGithubIssues = useCallback(
+  //   async (query: string) => {
+  //     const repoParams = `${query}%20repo:${githubData.login}/github-blog`
+  //     console.log(repoParams)
+  //     const response = await api.get('/issues', {
+  //       params: {
+  //         q: repoParams,
+  //       },
+  //     })
 
-      console.log(response.data)
-    },
-    [githubData.login],
-  )
+  //     console.log(response.data)
+  //   },
+  //   [githubData.login],
+  // )
 
   useEffect(() => {
     getGithubData()
-    getGithubIssues()
-  }, [getGithubData, getGithubIssues])
+    // fetchGithubIssues()
+    fetchGithubIssues()
+  }, [getGithubData, fetchGithubIssues])
 
   return (
-    <GithubContext.Provider value={{ githubData, githubIssuesData, githubURL }}>
+    <GithubContext.Provider
+      value={{ githubData, githubIssuesData, fetchGithubIssues, githubURL }}
+    >
       {children}
     </GithubContext.Provider>
   )
