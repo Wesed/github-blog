@@ -19,6 +19,7 @@ export function Home() {
             title={issue.title}
             date={issue.created_at}
             description={issue.body}
+            number={issue.number}
           />
         ))}
       </div>

@@ -24,3 +24,21 @@ input:-webkit-autofill:active{
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
+
+.markDownFormatter h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1.5rem 0 1rem;
+  padding: .5rem ;
+  border-bottom: 1px solid #1C2F41;
+}
+
+.markDownFormatter h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 1.5rem 0 1rem;
+}
+
+.markDownFormatter li {
+  list-style-type: disc;
+}

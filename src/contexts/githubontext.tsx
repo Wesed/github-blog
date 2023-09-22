@@ -21,6 +21,7 @@ interface GithubIssuesDataProps {
   title: string
   created_at: string
   body: string
+  number: number
 }
 
 interface GithubContext {
@@ -84,29 +85,13 @@ export function GithubContextProvider({
       title: item.title,
       created_at: item.created_at,
       body: item.body,
+      number: item.number,
     }))
     setGithubIssuesData(issues)
   }, [])
 
-  // pesquisar entre as issues
-  // const fetchGithubIssues = useCallback(
-  //   async (query: string) => {
-  //     const repoParams = `${query}%20repo:${githubData.login}/github-blog`
-  //     console.log(repoParams)
-  //     const response = await api.get('/issues', {
-  //       params: {
-  //         q: repoParams,
-  //       },
-  //     })
-
-  //     console.log(response.data)
-  //   },
-  //   [githubData.login],
-  // )
-
   useEffect(() => {
     getGithubData()
-    // fetchGithubIssues()
     fetchGithubIssues()
   }, [getGithubData, fetchGithubIssues])
 
