@@ -21,7 +21,7 @@ dependencies:
     specifier: ^7.46.1
     version: 7.46.1(react@18.2.0)
   react-router-dom:
-    specifier: ^6.15.0
+    specifier: ^6.16.0
     version: 6.16.0(react-dom@18.2.0)(react@18.2.0)
   react-uuid:
     specifier: ^2.0.0
