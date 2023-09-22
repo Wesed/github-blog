@@ -63,7 +63,7 @@ export function GithubContextProvider({
     }
   }, [])
 
-  // retorna todas as issues
+  // retorna as issues
   const getGithubIssues = useCallback(async () => {
     const repoParams = 'repo:Wesed/github-blog'
     const response = await api.get('/issues', {
@@ -82,20 +82,20 @@ export function GithubContextProvider({
   }, [])
 
   // pesquisar entre as issues
-  // const getGithubIssues = useCallback(
-  //   async (query: string) => {
-  //     const repoParams = `${query}%20repo:${githubData.login}/github-blog`
-  //     console.log(repoParams)
-  //     const response = await api.get('/issues', {
-  //       params: {
-  //         q: repoParams,
-  //       },
-  //     })
+  const getGithubIssues = useCallback(
+    async (query: string) => {
+      const repoParams = `${query}%20repo:${githubData.login}/github-blog`
+      console.log(repoParams)
+      const response = await api.get('/issues', {
+        params: {
+          q: repoParams,
+        },
+      })
 
-  //     console.log(response.data)
-  //   },
-  //   [githubData.login],
-  // )
+      console.log(response.data)
+    },
+    [githubData.login],
+  )
 
   useEffect(() => {
     getGithubData()
