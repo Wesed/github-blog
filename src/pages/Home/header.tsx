@@ -16,7 +16,12 @@ export function Header() {
       <div className="flex flex-col">
         <div className="flex justify-between font-bold text-base_title">
           <h2 className="text-2xl">{name}</h2>
-          <a href={githubURL} className="flex gap-2 text-sm text-blue">
+          <a
+            href={githubURL}
+            target="_blank"
+            className="flex gap-2 text-sm text-blue"
+            rel="noreferrer"
+          >
             GITHUB
             <ExternalLink className="h-4 w-4" />
           </a>

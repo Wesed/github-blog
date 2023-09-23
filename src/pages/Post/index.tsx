@@ -46,7 +46,7 @@ export function Post() {
       <div className="flex flex-col rounded-lg bg-base_profile p-8">
         <div className="flex justify-between">
           <a
-            href=""
+            href="/"
             className="flex gap-2 text-xs font-bold uppercase text-blue"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -54,7 +54,9 @@ export function Post() {
           </a>
           <a
             href={issue.url}
+            target="_blank"
             className="flex gap-2 text-xs font-bold uppercase text-blue"
+            rel="noreferrer"
           >
             Ver no GITHUB
             <ExternalLink className="h-4 w-4" />
