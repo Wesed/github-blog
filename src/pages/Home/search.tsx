@@ -3,6 +3,7 @@ import { GithubContext } from '../../contexts/githubontext'
 import * as z from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
+import { twMerge } from 'tailwind-merge'
 
 const searchFormSchema = z.object({
   query: z.string(),
@@ -35,7 +36,12 @@ export function Search() {
       <input
         type="text"
         placeholder="Buscar conteúdo"
-        className="rounded-md border-base_border bg-base_input px-4 py-3 text-white placeholder:text-base_label"
+        className={twMerge(
+          'bg-base_input px-4 py-3 text-white',
+          'rounded-md border border-base_border',
+          'hover:border-blue hover:transition hover:duration-200 focus:border-blue',
+          'placeholder:text-base_label',
+        )}
         {...register('query')}
       />
     </form>

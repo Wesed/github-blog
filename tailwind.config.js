@@ -20,6 +20,14 @@ module.exports = {
         sans: ['Nunito', 'sans-serif'],
       },
 
+      width: {
+        icon: '18px',
+      },
+
+      height: {
+        icon: '18px',
+      },
+
       maxWidth: {
         maxWidthProject: '1000px',
       },

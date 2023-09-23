@@ -19,7 +19,7 @@ export function Header() {
           <a
             href={githubURL}
             target="_blank"
-            className="flex gap-2 text-sm text-blue"
+            className="flex h-5 gap-2 border-b border-transparent text-sm text-blue transition duration-100 hover:border-blue"
             rel="noreferrer"
           >
             GITHUB

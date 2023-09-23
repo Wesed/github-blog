@@ -47,15 +47,15 @@ export function Post() {
         <div className="flex justify-between">
           <a
             href="/"
-            className="flex gap-2 text-xs font-bold uppercase text-blue"
+            className="flex h-5 items-start gap-1 border-b border-transparent text-sm font-bold uppercase text-blue transition duration-100 hover:border-blue"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-icon w-icon" />
             Voltar
           </a>
           <a
             href={issue.url}
             target="_blank"
-            className="flex gap-2 text-xs font-bold uppercase text-blue"
+            className="flex h-5 gap-2 border-b border-transparent text-sm font-bold uppercase text-blue transition duration-100 hover:border-blue"
             rel="noreferrer"
           >
             Ver no GITHUB
