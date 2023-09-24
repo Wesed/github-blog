@@ -46,7 +46,7 @@ export function GithubContextProvider({
     GithubIssuesDataProps[]
   >([])
 
-  const githubURL = 'https://github.com/Wesed/'
+  const githubURL = githubData && `https://github.com/${githubData.login}/`
 
   const getGithubData = useCallback(async () => {
     try {
@@ -66,34 +66,40 @@ export function GithubContextProvider({
   }, [])
 
   // retorna as issues
-  const fetchGithubIssues = useCallback(async (query?: string) => {
-    let repoParams
-    if (query) {
-      repoParams = `${query} repo:Wesed/github-blog`
-    } else {
-      repoParams = 'repo:Wesed/github-blog'
-    }
+  const fetchGithubIssues = useCallback(
+    async (query?: string) => {
+      let repoParams
+      if (query) {
+        repoParams = `${query} repo:${githubData.login}/github-blog`
+      } else {
+        repoParams = `repo:${githubData.login}/github-blog`
+      }
 
-    const response = await api.get('/issues', {
-      params: {
-        q: repoParams,
-      },
-    })
+      const response = await api.get('/issues', {
+        params: {
+          q: repoParams,
+        },
+      })
 
-    const issues = response.data.items.map((item: GithubIssuesDataProps) => ({
-      id: item.id,
-      title: item.title,
-      created_at: item.created_at,
-      body: item.body,
-      number: item.number,
-    }))
-    setGithubIssuesData(issues)
-  }, [])
+      const issues = response.data.items.map((item: GithubIssuesDataProps) => ({
+        id: item.id,
+        title: item.title,
+        created_at: item.created_at,
+        body: item.body,
+        number: item.number,
+      }))
+      setGithubIssuesData(issues)
+    },
+    [githubData],
+  )
 
   useEffect(() => {
-    getGithubData()
-    fetchGithubIssues()
-  }, [getGithubData, fetchGithubIssues])
+    if (githubData.login) {
+      fetchGithubIssues()
+    } else {
+      getGithubData()
+    }
+  }, [getGithubData, githubData, fetchGithubIssues])
 
   return (
     <GithubContext.Provider

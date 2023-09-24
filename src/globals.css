@@ -18,6 +18,8 @@ input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px #EDEDED inset !important;
 }
 
+// funciona android, mas iphone nao
+
 .description {
   display: -webkit-box;
   /* limita quantas linhas serao exibidas */
