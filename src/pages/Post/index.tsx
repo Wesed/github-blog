@@ -41,13 +41,13 @@ export function Post() {
   }, [id])
 
   return (
-    <div className="-mt-20 flex flex-col">
+    <div className="flex flex-col lg:-mt-20">
       {/* header */}
-      <div className="flex flex-col rounded-lg bg-base_profile p-8">
+      <div className="flex flex-col rounded-lg bg-base_profile p-2 lg:p-8">
         <div className="flex justify-between">
           <a
             href="/"
-            className="flex h-5 items-start gap-1 border-b border-transparent text-sm font-bold uppercase text-blue transition duration-100 hover:border-blue"
+            className="flex h-5 items-start gap-1 border-b border-transparent text-xs font-bold uppercase text-blue transition duration-100 hover:border-blue lg:text-sm"
           >
             <ChevronLeft className="h-icon w-icon" />
             Voltar
@@ -55,19 +55,19 @@ export function Post() {
           <a
             href={issue.url}
             target="_blank"
-            className="flex h-5 gap-2 border-b border-transparent text-sm font-bold uppercase text-blue transition duration-100 hover:border-blue"
+            className="flex h-5 gap-2 border-b border-transparent text-xs font-bold uppercase text-blue transition duration-100 hover:border-blue lg:text-sm"
             rel="noreferrer"
           >
             Ver no GITHUB
             <ExternalLink className="h-4 w-4" />
           </a>
         </div>
-        <h1 className="mt-5 text-2xl font-bold text-base_title">
+        <h1 className="mt-5 font-bold text-base_title lg:text-2xl">
           {issue.title}
         </h1>
 
         {/* rodapé */}
-        <div className="mt-3 flex gap-6 text-base_subtitle">
+        <div className="mt-3 flex gap-6 text-sm text-base_subtitle lg:text-base">
           <div className="flex items-center gap-2 text-base_label">
             <Github />
             <span className="text-base_span">{issue.author}</span>
@@ -89,7 +89,7 @@ export function Post() {
         </div>
       </div>
 
-      <div className="markDownFormatter px-8 py-10 text-base_text">
+      <div className="markDownFormatter px-3 py-5 text-sm text-base_text lg:px-8 lg:py-10 lg:text-base">
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{issue.body}</ReactMarkdown>
       </div>
     </div>

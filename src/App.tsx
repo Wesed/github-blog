@@ -8,8 +8,12 @@ import { GithubContextProvider } from './contexts/githubontext'
 function App() {
   return (
     <GithubContextProvider>
-      <div className="min-h-screen bg-base_background">
-        <img src={cover} alt="" className="mx-auto max-w-[1440px]" />
+      <div className="min-h-screen bg-base_background p-4 lg:p-0">
+        <img
+          src={cover}
+          alt=""
+          className="sr-only lg:not-sr-only lg:mx-auto lg:max-w-[1440px]"
+        />
         <div className="relative z-10 mx-auto my-0 max-w-maxWidthProject">
           <BrowserRouter>
             <Routes>

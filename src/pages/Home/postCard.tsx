@@ -22,18 +22,18 @@ export function PostCard({ title, date, description, number }: PostCardProps) {
       )}
     >
       <div className="relative flex items-start justify-between gap-x-2">
-        <span className="absolute -top-6 right-0 text-sm/8 text-base_span">
+        <span className="absolute -top-6 right-0  text-xs/8 text-base_span lg:text-sm/8">
           {formatDistanceToNow(new Date(date), {
             addSuffix: true,
             locale: ptBR,
           })}
         </span>
-        <h1 className="flex-1 pt-3 text-xl font-bold text-base_title">
+        <h1 className="flex-1 pt-3 font-bold text-base_title lg:text-xl">
           {title}
         </h1>
       </div>
 
-      <div className="description mt-5 overflow-y-hidden text-base_text">
+      <div className="description mt-5 overflow-y-hidden text-sm text-base_text lg:text-base">
         <ReactMarkdown>{description}</ReactMarkdown>
       </div>
     </a>

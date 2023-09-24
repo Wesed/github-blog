@@ -12,7 +12,7 @@ export function Home() {
       <Header />
       <Search />
 
-      <div className="mx-auto mt-14 grid grid-cols-2 justify-between gap-8 pb-52">
+      <div className="mx-auto mt-14 grid grid-cols-1 justify-between gap-8 pb-52 lg:grid-cols-2">
         {githubIssuesData.map((issue) => (
           <PostCard
             key={issue.id}
